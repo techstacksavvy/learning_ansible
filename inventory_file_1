@@ -1,0 +1,14 @@
+ansible1
+ansible2
+
+[web]
+web1
+web2
+
+[db]
+db1
+db2
+
+[servers:children]
+db
+web
