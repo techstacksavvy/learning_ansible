@@ -1,2 +1,2 @@
 # learning_ansible
-RHCE Study Guide 
+RHCE Study Guide and Practice
