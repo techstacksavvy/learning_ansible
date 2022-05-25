@@ -1,0 +1,19 @@
+---
+- name: myplay
+  hosts: ansible1
+  tasks:
+  - name: task1
+    debug:
+      msg: hello world
+  - name: task2
+    debug:
+      msg: hello task2
+
+
+- name: ansible2 settings
+  hosts: ansible2
+  tasks:
+  - name: hello ansible2
+    debug:
+      msg: hello ansible2
+

@@ -1,0 +1,28 @@
+---
+- name: install start and enable httpd
+  gather_facts: false
+  hosts: ansible1
+  tasks:
+  - name: install package
+    package:
+      name: httpd
+      state: latest
+  - name: start and enable service
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+  - name: open port in firewall
+    firewalld:
+      service: http
+      permanent: yes
+      state: enabled
+      immediate: yes
+- name: test httpd accessibility
+  become: False
+  gather_facts: no
+  hosts: localhost
+  tasks:
+  - name: test httpd access
+    uri:
+      url: http://ansible1
