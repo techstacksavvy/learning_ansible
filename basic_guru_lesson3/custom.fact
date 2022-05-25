@@ -1,5 +1,0 @@
-[software]
-package = httpd
-service = httpd
-state = started
-enabled = true
