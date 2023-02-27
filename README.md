@@ -31,9 +31,6 @@ ansible dbsystems -b -m user -a "name=consultant"
 written as a play...
 
 <html>
-  <head>
-    <title>Create "consultant" user</title>
-  </head>
   <body>
     <h1>Create "consultant" user</h1>
     <p>This Ansible playbook will create a user named "consultant" on all servers in the "dbsystems" inventory group.</p>
