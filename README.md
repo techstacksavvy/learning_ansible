@@ -30,14 +30,6 @@ ansible dbsystems -b -m user -a "name=consultant"
 
 written as a play...
 
----
-- hosts: dbsystems
-  become: yes
-  tasks:
-    - name: Create "consultant" user
-      user:
-        name: consultant
-        
 <html>
   <head>
     <title>Create "consultant" user</title>
@@ -55,6 +47,7 @@ written as a play...
     </pre>
   </body>
 </html>
+
 
 user module 
 
