@@ -32,9 +32,10 @@ written as a play...
 
 <html>
   <body>
-    <h1>Create "consultant" user</h1>
+    <p>Create "consultant" user</h1>
     <p>This Ansible playbook will create a user named "consultant" on all servers in the "dbsystems" inventory group.</p>
     <pre>
+        Create "consultant" user
       - hosts: dbsystems
         become: yes
         tasks:
