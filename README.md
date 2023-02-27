@@ -27,21 +27,15 @@ The **Ansible architecture** consists of two main components:
 This command will use the Ansible tool to create a user named "consultant" on all servers in the "dbsystems" inventory group. The -b flag indicates that the command should be run as the "root" user, while the -m flag specifies the module to use (in this case, the "user" module). The -a flag is used to provide the module's arguments, which in this case is the name of the user to be created.
 
 **written as a play...**
-
-<html>
-  <body>
-    <pre>
-      ---
-      - hosts: dbsystems
-        become: yes
-        tasks:
-          - name: Create "consultant" user
-            user:
-              name: consultant
-    </pre>
-  </body>
-</html>
-
+```
+---
+- hosts: dbsystems
+  become: yes
+  tasks:
+    - name: Create "consultant" user
+      user:
+        name: consultant
+```
 
 **user module**
 
