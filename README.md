@@ -61,7 +61,7 @@ file module
 
 The file module is used in Ansible to manage files and directories. It can be used to create, delete, modify, and move files and directories, as well as set permissions and ownership. It can also be used to copy and synchronize files and directories between different locations, such as between servers and local machines. The file module is very flexible and allows for a wide range of functionality.
 
-ansible dbsystems -b -m file -a "path=/home/consultant/.ssh state=directory owner=consultant group=consultant mode=0755"
+```ansible dbsystems -b -m file -a "path=/home/consultant/.ssh state=directory owner=consultant group=consultant mode=0755"```
 
 This command will use the Ansible tool to create a directory called ".ssh" in the home directory of the user "consultant" on all servers in the "dbsystems" inventory group. The -b flag indicates that the command should be run as the "root" user, while the -m flag specifies the module to use (in this case, the "file" module). The -a flag is used to provide the module's arguments, which in this case is the path of the directory to be created, the owner and group to set for the directory, and the permissions to set for the directory (mode=0755).
 
