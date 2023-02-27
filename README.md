@@ -22,11 +22,9 @@ Ansible Plays are the building blocks of Ansible Playbooks. Plays are like indiv
 Ansible Playbooks are YAML files that contain instructions for Ansible, written in Plays. They can contain multiple Plays, each of which can specify multiple tasks to be completed. Playbooks can be used to automate complex processes, such as setting up a web server, deploying an application, or configuring a network.
 
 
-ansible dbsystems -b -m user -a "name=consultant"
+```ansible dbsystems -b -m user -a "name=consultant"```
 
  This command will use the Ansible tool to create a user named "consultant" on all servers in the "dbsystems" inventory group. The -b flag indicates that the command should be run as the "root" user, while the -m flag specifies the module to use (in this case, the "user" module). The -a flag is used to provide the module's arguments, which in this case is the name of the user to be created.
-
-ansible dbsystems -b -m user -a "name=consultant"
 
 <html>
    <body>
@@ -67,10 +65,10 @@ This command will use the Ansible tool to create a directory called ".ssh" in th
 
 written as a an ad-hoc cmd
 
-ansible dbsystems -b -m copy -a "src=/home/ansible/keys/consultant/authorized_keys dest=/home/consultant/.ssh/authorized_keys mode=0600 owner=consultant group=consultant"
+```ansible dbsystems -b -m copy -a "src=/home/ansible/keys/consultant/authorized_keys dest=/home/consultant/.ssh/authorized_keys mode=0600 owner=consultant group=consultant"```
 
 written as a play
-
+```
 ---
 - hosts: dbsystems
   become: yes
@@ -82,13 +80,13 @@ written as a play
         mode: 0600
         owner: consultant
         group: consultant
-
+```
 service module
 
 The service module is used in Ansible to manage services on remote systems. It can be used to start, stop, restart, and reload services, as well as check the status of a service to ensure it is running. It can also be used to enable or disable services to ensure they start at boot time. The service module is very useful for quickly and easily managing services on remote systems.
 
 
-ansible all -b -m service -a "name=auditd state=started enabled=yes"
+```ansible all -b -m service -a "name=auditd state=started enabled=yes"```
 
 This command will use the Ansible tool to start the "auditd" service on all servers in the inventory. The -b flag indicates that the command should be run as the "root" user, while the -m flag specifies the module to use (in this case, the "service" module). The -a flag is used to provide the module's arguments, which in this case is the name of the service to be managed, the desired state (started), and whether the service should be enabled or disabled (enabled=yes).
 
@@ -109,10 +107,10 @@ The "enabled" and "disabled" states are used for ensuring services are started a
 
 written as an ad-hoc cmd
 
-ansible all -b -m service -a "name=auditd state=started enabled=yes"
+```ansible all -b -m service -a "name=auditd state=started enabled=yes"```
 
 written as a play
-
+```
 ---
 - hosts: all
   become: yes
@@ -122,7 +120,7 @@ written as a play
         name: auditd
         state: started
         enabled: yes
-
+```
 what is auditd?
 
 technical definition:
@@ -132,30 +130,31 @@ in layman's terms:
 Auditd is a computer program that helps to keep your computer safe. It keeps track of what people do on your computer, like what files they open or what changes they make. It also keeps a record of what programs are running and when they are running. This helps to make sure that only people who are allowed to use your computer can access it, and that no one is doing anything to make your computer less secure.
 
 configure media Host Group to Contain media1 and media2
-
+```
 [media]
 media1
 media2
-
-Define the following variables for media with their accompanying values in yaml format
+```
+Define variables
 media_content should be set to /tmp/var/media/content/
-
+```
 media:
   media_content: /tmp/var/media/content/
-
+```
 where are variables defined in ansible?
 
 Variables in Ansible are defined in the playbook itself, or in an external file such as a configuration file, inventory file, or group variables file. They can also be defined from the command line with the "-e" or "--extra-vars" flag.
 
 example:
-
+```
 [media]
 media1
 media2
 media_content=/tmp/var/media/content/
-
+```
 variables can also be put into it's own dir
 for example:
-mkdir group_vars
+```mkdir group_vars
 vim group_vars/media
 [in the file write] media_content: /tmp/var/media/content/
+```
