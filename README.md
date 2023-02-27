@@ -29,10 +29,10 @@ ansible dbsystems -b -m user -a "name=consultant"
 ansible dbsystems -b -m user -a "name=consultant"
 
 <html>
-    <body>
-        <p>
+   <body>
+      <pre>
             ansible dbsystems -b -m user -a "name=consultant"
-        </p>
+       </pre>
     </body>
 </html>
 
