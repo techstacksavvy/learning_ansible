@@ -147,7 +147,7 @@ vim group_vars/media
 ```
 
 **Ansible Playbooks(the basics)**
-
+---
 The contents of my inventory file...
 
 ```
@@ -155,6 +155,8 @@ The contents of my inventory file...
 node1
 node2
 ```
+The contents of my playbook...
+There are four tasks included in this playbook. Namely to install the httpd service, start and enable the httpd service, to retrieve a website from a repo, unarchive the web file and finally to install the website onto our node1 and node2 servers in the /var/www/html folder.
 
 ```
 ---
