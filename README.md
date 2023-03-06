@@ -145,3 +145,5 @@ mkdir group_vars
 vim group_vars/media
 [in the file write] media_content: /tmp/var/media/content/
 ```
+
+###Ansible Playbooks(the basics)###
