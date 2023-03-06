@@ -187,3 +187,7 @@ There are four tasks included in this playbook. This playbook is used to install
         
  ```
 <img width="766" alt="image" src="https://user-images.githubusercontent.com/84424434/222996963-56894da6-2e9e-419b-a15f-8e7abd4a3d2e.png">
+
+The **get_url module** is used to download files from a remote URL and save them locally. It can be used to download archives, configuration files, scripts, and other types of files. It supports downloading files over FTP, HTTP, and HTTPS protocols.
+
+The **remote_src module** is used to copy files from a remote server to the local machine. It supports copying files from a variety of protocols including SCP, FTP, and HTTP. It can also be used to download files from a remote URL and unarchive them.
