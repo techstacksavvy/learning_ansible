@@ -184,3 +184,4 @@ node2
         dest: /var/www/html/
         
  ```
+<img width="766" alt="image" src="https://user-images.githubusercontent.com/84424434/222996963-56894da6-2e9e-419b-a15f-8e7abd4a3d2e.png">
