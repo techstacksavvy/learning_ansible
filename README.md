@@ -148,6 +148,14 @@ vim group_vars/media
 
 **Ansible Playbooks(the basics)**
 
+The contents of my inventory file...
+
+```
+[web]
+node1
+node2
+```
+
 ```
 ---
 - hosts: web
