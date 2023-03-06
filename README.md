@@ -156,7 +156,7 @@ node1
 node2
 ```
 The contents of my playbook...
-There are four tasks included in this playbook. Namely to install the httpd service, start and enable the httpd service, to retrieve a website from a repo, unarchive the web file and finally to install the website onto our node1 and node2 servers in the /var/www/html folder.
+There are four tasks included in this playbook. This playbook is used to install and enable the Apache web server on a group of hosts called 'web'. The first task uses the yum module to install the latest version of Apache. The second task starts and enables the Apache service. The third task uses the get_url module to download a tar file from a repository and save it to the /tmp directory. The final task uses the remote_src module to unarchive the tar file in the /var/www/html directory.
 
 ```
 ---
