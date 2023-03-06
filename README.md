@@ -146,4 +146,33 @@ vim group_vars/media
 [in the file write] media_content: /tmp/var/media/content/
 ```
 
-###Ansible Playbooks(the basics)###
+**Ansible Playbooks(the basics)**
+
+```
+---
+- hosts: web
+  become: yes
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+
+    - name: start and enable httpd on web group
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: retrieve website from repo
+      get_url:
+        url: http://repo.example.com/website.tgz
+        dest: /tmp/website.tgz
+
+    - name: install website
+      unarchive:
+        remote_src: yes
+        src: /tmp/website.tgz
+        dest: /var/www/html/
+        
+ ```
