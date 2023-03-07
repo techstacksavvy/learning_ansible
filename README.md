@@ -220,3 +220,15 @@ Error free playbook...
 SUCCESS!
 
 <img width="761" alt="image" src="https://user-images.githubusercontent.com/84424434/223319081-74e24d3a-c920-44d7-b7e4-838a2d2d4a9f.png">
+
+Ansible uses two keywords, **block, and rescue**, to help manage error handling within a play. **Blocks** allow multiple tasks to be grouped together and executed as a single unit. If any task within the block fails, the entire block will fail. 
+
+**Rescues** allow the execution of tasks that will only run if a task within a block fails. This allows for tasks to be run that may help correct the issue that caused the block to fail, allowing for automated remediation of certain issues.
+
+The **debug module** in Ansible allows the user to print out variables or other information to the terminal for debugging purposes. It can be used to print out the content of a variable or the results of a task. 
+
+The **replace module** is used to search and replace text within a file. It can be used to change settings or values within configuration files. It also allows for regular expressions to be used to search and replace.
+
+Ansible uses **regular expressions (regex)** to match strings, characters, and patterns within tasks and playbooks. Regex is a powerful tool for performing complex matches and substitutions on strings. It is often used to match words, and phrases, or to extract data from text. Regex can be used in combination with other modules to search and replace text within a file. 
+
+**Regular expressions** are composed of characters and special operators that can match certain patterns of characters. For example, a regex may be used to match the word "ansible" in a string of text. Regex can also be used to match multiple words, or to match words in a specific order. Regular expressions can also be used to extract specific information from a string, such as an email address or a phone number.
