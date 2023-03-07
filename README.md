@@ -221,6 +221,9 @@ SUCCESS!
 
 <img width="761" alt="image" src="https://user-images.githubusercontent.com/84424434/223319081-74e24d3a-c920-44d7-b7e4-838a2d2d4a9f.png">
 
+Terms & Explanations
+---
+
 Ansible uses two keywords, **block, and rescue**, to help manage error handling within a play. **Blocks** allow multiple tasks to be grouped together and executed as a single unit. If any task within the block fails, the entire block will fail. 
 
 **Rescues** allow the execution of tasks that will only run if a task within a block fails. This allows for tasks to be run that may help correct the issue that caused the block to fail, allowing for automated remediation of certain issues.
