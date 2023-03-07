@@ -215,7 +215,28 @@ Credit: A Cloud Guru
 
 Error free playbook...
 
-<img width="440" alt="image" src="https://user-images.githubusercontent.com/84424434/223319945-ceea25aa-d591-4441-a726-e58d87416d22.png">
+```
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: download transaction list to localhost
+      block:
+        - get_url:
+            url: http://apps.l33t.com/transaction_list
+            dest: /home/ansible/transaction_list
+        - replace:
+            path: /home/ansible/transaction_list
+            regexp: "#BLANKLINE"
+            replace: '\n'
+        - debug:
+            msg: "File Downloaded"
+      rescue:  
+        -debug:
+           msg: "l33t.com appears to be down. Try again later."
+        -debug:
+           msg: "Attempt Completed."
+```
 
 SUCCESS!
 
