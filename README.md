@@ -198,8 +198,18 @@ Error Handling
 
 <img width="458" alt="image" src="https://user-images.githubusercontent.com/84424434/223316885-1c29c272-4a72-4686-8479-c4a7b07d80b5.png">
 
+**Time to investigate this FAILED replace task**
+
 <img width="945" alt="image" src="https://user-images.githubusercontent.com/84424434/223317514-a270c400-c470-42b3-bd5f-5cf8bd190e59.png">
-**Typo...regex should've been regexp**
+
+**Typo**...regex should've been regexp
+
 <img width="342" alt="image" src="https://user-images.githubusercontent.com/84424434/223319334-2e7f8996-74c5-4b0a-b55e-6236b79de227.png">
+
+Error free playbook...
+
+<img width="440" alt="image" src="https://user-images.githubusercontent.com/84424434/223319945-ceea25aa-d591-4441-a726-e58d87416d22.png">
+
+SUCCESS!
 
 <img width="761" alt="image" src="https://user-images.githubusercontent.com/84424434/223319081-74e24d3a-c920-44d7-b7e4-838a2d2d4a9f.png">
