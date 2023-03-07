@@ -194,6 +194,13 @@ The **remote_src module** is used to copy files from a remote server to the loca
 
 Error Handling
 ---
+
+**The Assignment:**
+
+We have to set up automation to pull down a data file, from a notoriously unreliable third-party system, for integration purposes. Create a playbook that attempts to pull down http://apps.l33t.com/transaction_list to localhost. The playbook should gracefully handle the site being down by outputting the message "l33t.com appears to be down. Try again later." to stdout. If the task succeeds, the playbook should write "File downloaded." to stdout. No matter if the playbook errors or not, it should always output "Attempt completed." to stdout. -A Cloud Guru
+
+If the report is collected, the playbook should write and edit the file to replace all occurrences of #BLANKLINE with a line break \n.
+
 <img width="656" alt="image" src="https://user-images.githubusercontent.com/84424434/223316978-728b1ec0-17f1-497e-bdd4-cc4ab434f3fd.png">
 
 <img width="458" alt="image" src="https://user-images.githubusercontent.com/84424434/223316885-1c29c272-4a72-4686-8479-c4a7b07d80b5.png">
