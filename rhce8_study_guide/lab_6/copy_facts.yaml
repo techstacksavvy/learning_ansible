@@ -1,0 +1,17 @@
+---
+- name: copy custom facts to remote servers
+  hosts: all
+  vars:
+    facts_file: custom_pkg.fact
+    facts_file: custom_svc.fact
+    remote_dir: /etc/ansible/facts.d
+  tasks:
+  - name: create the remote dir on the managed hosts 
+    file:
+      state: directory
+      recurse: yes
+      path: /etc/ansible/facts.d
+  - name: copy the custom facts to the remote dir on the managed hosts
+    copy:
+      src: "{{ facts_file }}"
+      dest: "{{ remote_dir }}"

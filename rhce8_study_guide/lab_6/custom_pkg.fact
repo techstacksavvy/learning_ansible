@@ -1,0 +1,6 @@
+[software]
+smb_package=samba
+ftp_package=vsftpd
+db_package=mariadb-server
+web_package=httpd
+firewall_package=firewalld

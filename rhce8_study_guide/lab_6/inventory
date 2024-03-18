@@ -1,0 +1,11 @@
+[webservers]
+ansible1
+
+[dbservers]
+ansible2
+
+[file]
+ansible1
+
+[lamp]
+ansible2 

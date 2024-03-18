@@ -1,0 +1,40 @@
+---
+- name: setting up file and web services
+  hosts: file, lamp
+  vars_files: vars/allvars.yaml
+  tasks:
+  - name: install web and ftp software
+    yum:
+      name:
+      - "{{ ansible_local['custom_pkg']['software']['web_package'] }}"
+      - "{{ ansible_local['custom_pkg']['software']['ftp_package'] }}"
+      state: installed
+  - name: start and enable the web services
+    service:
+      name: "{{ ansible_local['custom_svc']['service']['web_service'] }}"
+      state: started
+      enabled: true
+  - name: start and enable the file services
+    service:
+      name: "{{ ansible_local['custom_svc']['service']['ftp_service'] }}"
+      state: started
+      enabled: true
+  - name: create the index.html file
+    file:
+      state: touch
+      path: "{{ web_root }}"
+  - name: write text to index.html
+    copy:
+      content: 'Welcome to the Ansible Web Server!'
+      dest: "{{ web_root }}/index.html"
+  - name: open port 80 for http traffic
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+  - name: open port 443 for https traffic
+    firewalld:
+      service: https
+      permanent: true
+      state: enabled
+
