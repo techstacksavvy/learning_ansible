@@ -1,0 +1,8 @@
+---
+- name: create host file
+  hosts: all
+  tasks:
+  - name: generate /etc/hosts file on all managed nodes
+    template:
+      src: hostfile.j2
+      dest: /tmp
