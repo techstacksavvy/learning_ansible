@@ -1,0 +1,66 @@
+---   
+- name: install, start and enable vsftpd service
+  hosts: all
+  vars_files:
+    - vsftpd_vars.yaml
+  tasks:
+  - name: install vsftpd package
+    yum:
+      name: vsftpd
+      state: present
+
+  - name: start and enable vsftpd service
+    service:
+      name: vsftpd
+      state: started
+      enabled: true
+
+  - name: configure vsftpd with jinga 2 template
+    template:
+      src: vsftpd.conf.j2
+      dest: /etc/vsftpd/vsftpd.conf
+
+
+  - name: open port 21 on firewall to make vsftpd accessible
+    firewalld:
+      port: 21/tcp
+      state: enabled
+      permanent: true
+    notify: 
+      - restart_vsftpd
+      - restart_firewalld
+        
+  handlers:
+    - name: restart_firewalld
+      service:
+        name: firewalld
+        state: restarted
+
+    - name: restart_vsftpd
+      service:
+        name: vsftpd
+        state: restarted
+
+- name: configure SELinux on vsftpd
+  hosts: all
+  tasks:
+  - name: set permissions on /var/ftp/pub directory
+    file:
+      path: /var/ftp/pub
+      mode: '0777'
+
+  - name: allow anonymous user writes
+    seboolean:
+      name: ftpd_anon_write
+      state: true
+      persistent: true
+
+  - name: set the context type to public_content_rw_t
+    sefcontext:
+      target: '/var/ftp/pub(/.*)?'
+      setype: public_content_rw_t
+      state: present 
+
+  - name: run the restorecon command
+    command: 
+      cmd: restorecon -Rv /var/ftp/pub
