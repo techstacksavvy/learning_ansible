@@ -1,0 +1,8 @@
+{% for host in groups['all'] %}
+
+anonymous_enable={{ anonymous_enable }}
+local_enable={{ local_enable }}
+write_enable={{ write_enable }}
+anon_upload_enable={{ anon_upload_enable }}
+
+{% endfor %}
